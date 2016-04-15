@@ -23,7 +23,7 @@ Restaurant.create!(
   :name => "Lone Star Tex Mex Restaurant",
   :address => "123 Lone Star Blvd",
   :phone_number=>  "4161234567",
-  :cusine_id => 1,
+  :cuisine_id => 1,
   :capacity=> 100
 )
 
