@@ -46,6 +46,7 @@ User.create!(
   :first_name => "Francis",
   :last_name => "Gallo",
   :email => "francis.gallo@gmail.com",
+  :password => "1234",
   :phone_number => "6470938472"
 )
 
@@ -53,6 +54,7 @@ User.create!(
   :first_name =>  "Peter",
   :last_name =>  "La",
   :email =>  "peter.la@gmail.com",
+  :password => "1234",
   :phone_number =>  "4161234579"
 )
 
@@ -60,5 +62,6 @@ User.create!(
   :first_name => "Mike",
   :last_name => "Thai",
   :email => "mike.thai@gmail.com",
+  :password => "1234",
   :phone_number => "9053769372"
 )
