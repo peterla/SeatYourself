@@ -10,7 +10,6 @@ Cuisine.create!(
   :cuisine_type => "mexican"
 )
 
-
 Cuisine.create!(
   :cuisine_type => "chinese"
 )
