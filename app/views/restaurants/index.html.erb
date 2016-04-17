@@ -8,17 +8,21 @@
 
 <div id="content">
 
-<div id="page-title"> <h1>SeatYourself</h1>
-<h2>All Restaurants:</h2>
-</div>
+<div id="page-title"> <h1>Seat<i>Yourself</i></h1> </div>
+<div id="page-subtitle"> <h2>All Restaurants:</h2> </div>
+
 
 <div class="restaurant-list">
-  <table align="center">
+  <!-- <table align="center"> -->
+  <table>
+
     <colgroup>
-      <col style="width: 66%">
-      <col span="2" style="width: 33%">
+      <col style="width: 20%">
+      <col span="1" style="width: 30%">
+      <col span="2" style="width: 20%">
     </colgroup>
   <tr>
+    <th>Photo:</th>
     <th>Restaurant:</th>
     <th>Address:</th>
     <th>Phone Number:</th>
@@ -27,9 +31,10 @@
   <% @restaurants.each do |restaurant| %>
 
     <tr>
-      <td id="rest-name"><a href="restaurants/<%=restaurant.id%>"><h2><%= "#{restaurant.name}" %></h2></a></td>
-      <td id="rest-address"><p><%= "#{restaurant.address}" %> </p></td>
-      <td id="rest-phone-number"><p> <%= "#{restaurant.phone_number}" %></p></td>
+      <td><img src="http://placekitten.com/300/300" ></td>
+      <td><a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
+      <td><p><%= "#{restaurant.address}" %> </p></td>
+      <td><p> <%= "#{restaurant.phone_number}" %></p></td>
    </tr>
 
      <% end %>
