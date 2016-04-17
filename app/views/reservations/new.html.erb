@@ -1,2 +1,36 @@
-<h1>Reservations#new</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
+<h1>Reservation for <%= "#{@restaurant.name}" %></h1>
+
+<%= link_to "Back", restaurants_url %>
+
+<%= form_for([@restaurant, @reservation]) do |f| %>
+  <%if @reservation.errors.any? %>
+    <div class= "error_messages">
+      <h2>  Missing infomation </h2>
+      <ul>
+        <% @reservation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br/>
+    <%= f.date_field :date %>
+  </div>
+
+  <div class= "field">
+    <%= f.label :time %><br/>
+    <%= f.time_field :time %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :party_size %><br/>
+    <%= f.select :party_size, [['1', 1], ['2', 2], ['3',3],['4',4],['5',5]] %>
+  </div>
+
+  <div class="actions">
+     <%= f.submit %>
+  </div>
+
+<% end %>
