@@ -1,0 +1,21 @@
+<H1> Customer's Page <h1>
+
+<%= link_to 'back to main page', resturants_path %>
+
+<div>
+  Customer Profile
+</div>
+
+<div>
+    <%= current_user.first_name %>, <%= current_user.last_name %>, <%= current_user.phone_number %>
+    <%= current_user.email %>
+</div>
+
+<div>
+  Reservations:
+    <% current_user.reservations.each do |reservation| %>
+      <ul>
+        <li> <%= reservation.resturant.name %> <%= reservation.date %> <%= reservation.time %>
+        </li>
+      </ul>
+    <%end %>
