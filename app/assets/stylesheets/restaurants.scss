@@ -50,38 +50,42 @@ nav {
   font-size: 50px;
   font-weight: bold;
   padding-bottom: 75px;
+  padding-top: 35px;
   h1 i:first-child {
     color: #83B644;
   }
 }
 
-.restaurants-list {
+#restaurants-list {
   box-sizing: border-box;
-  width: 80%;
+  width: auto;
+  margin-left: 5%;
   text-align: center;
   font-family: $playfair;
-  p {
-    font-size: 20px;
-    color: #D4D6C2;
-  }
 
+  // p {
+  //   font-size: 20px;
+  //   color: #D4D6C2;
+  // }
   table {
     table-layout: fixed;
     width: 100%;
-
   }
-  th {
+  td {
     text-align: left;
     text-decoration: underline;
     font-size: 30px;
     padding-bottom: 50px;
   }
-  p {
-    font-size: 1.5em;
-  }
 }
 
 #rest-name {
+  font-size: 30px;
+  color: #F9FCD3;
+  text-align: left
+}
+
+#contact-info {
   font-size: 30px;
   color: #F9FCD3;
   text-align: left
