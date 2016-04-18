@@ -2,20 +2,19 @@
   <h1>Seat<i>Yourself</i></h1>
 </div>
 
-<div id="content">
-  <div class="container" id="restaurants-list">
+<div class="container" id="content">
   <table>
   <colgroup>
-    <col width="500px">
-    <col width="500px">
-    <col width="600px">
+    <col width="30%">
+    <col width="40%">
+    <col width="30%">
   </colgroup>
   <% @restaurants.each do |restaurant| %>
-    <tr>
-      <td> <a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/300/350" style="padding-bottom: 10px"></a> </td>
+      <tr>
+      <td id="rest-image"> <a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/350/350" style="padding-bottom: 10px"></a> </td>
       <td> <a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
-      <td><h2 id="contact-info"><%= "#{restaurant.address}" %></br></br><%= "#{restaurant.phone_number}" %></h2></td>
-   </tr></br>
+      <td><h2 id="rest-contact"><%= "#{restaurant.address}" %></br></br><%= "#{restaurant.phone_number}" %></h2></td>
+   </tr>
    <% end %>
   </table>
   </div>
