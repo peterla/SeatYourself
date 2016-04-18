@@ -1,8 +1,7 @@
-<h1><%= "#{@restaurant.name}" %></h1>
-
-<p><%= link_to "Back", restaurants_url %>|<%= link_to "New Reservation", new_restaurant_reservation_url( @restaurant.id ) %>
+<p><%= link_to "Back", restaurants_url %></p>
 <div>
-  </h2><%= "#{@restaurant.name}" %></h2>
+  <h1><%= "#{@restaurant.name}" %></h1>
+  <%= link_to "New Reservation", new_restaurant_reservation_url( @restaurant.id ) %>
   <p>Contact Information</p>
   <p><%= "#{@restaurant.address}" %></p>
   <p><%= "#{@restaurant.phone_number}" %></p>

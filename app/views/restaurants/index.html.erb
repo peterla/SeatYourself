@@ -1,43 +1,22 @@
+<div class="container" id="title">
+  <h1>Seat<i>Yourself</i></h1>
+</div>
 
-<nav>
-  <ul>
-    <li><p><a href="restaurants/index">Home</p></a></li>
-    <li><p><a href="restaurants/index">My profile</p></a></li>
-  </ul>
-</nav>
-
-<div id="content">
-
-<div id="page-title"> <h1>Seat<i>Yourself</i></h1> </div>
-<div id="page-subtitle"> <h2>All Restaurants:</h2> </div>
-
-
-<div class="restaurant-list">
-  <!-- <table align="center"> -->
-  <table>
-
+  <div class="restaurant-list">
+    <table id="rest-table">
     <colgroup>
-      <col style="width: 20%">
-      <col span="1" style="width: 30%">
-      <col span="2" style="width: 20%">
+      <col width="30%">
+      <col width="40%">
+      <col width="30%">
     </colgroup>
-  <tr>
-    <th>Photo:</th>
-    <th>Restaurant:</th>
-    <th>Address:</th>
-    <th>Phone Number:</th>
-  </tr>
-
-  <% @restaurants.each do |restaurant| %>
-
-    <tr>
-      <td><img src="http://placekitten.com/300/300" ></td>
-      <td><a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
-      <td><p><%= "#{restaurant.address}" %> </p></td>
-      <td><p> <%= "#{restaurant.phone_number}" %></p></td>
-   </tr>
-
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/300/350"></a></td>
+        <td><a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
+        <td><p><%= "#{restaurant.address}" %> </p><p> <%= "#{restaurant.phone_number}" %></p></td>
+     </tr>
      <% end %>
      </br>
   </table>
+  </div>
 </div>

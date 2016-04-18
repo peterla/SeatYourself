@@ -8,6 +8,29 @@
 </head>
 <body>
 
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="restaurants/index">Home</a></li>
+        <li class="userinfo">
+          <% if current_user %>
+            Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+          <% else %>
+            <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+          <% end %></li>
+        <li><a href="restaurants/index">My Reservations</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- <p class="userinfo">
+    <% if current_user %>
+      Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+    <% else %>
+      <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+    <% end %>
+  </p> -->
+
   <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
   <% end %>
@@ -16,14 +39,6 @@
   <% end %>
 
   <%= yield %>
-
-  <p class="userinfo">
-    <% if current_user %>
-      Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-    <% else %>
-      <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-    <% end %>
-  </p>
 
 </body>
 </html>

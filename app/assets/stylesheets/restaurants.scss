@@ -1,61 +1,61 @@
+$playfair: 'Playfair Display', serif;
 
-$font_family: 'Playfair Display', serif;
+// Here's a few wallpaper options:
+
+$background1: image-url('dark-geometric-1920x1080.png');
+$background2: image-url('black-thread-1920x1080.png');
+$background3: image-url('norwegian-rose-blue.png');
+$background4: image-url('norwegian-rose-bluegreen.png');
+
+body {
+  background-image: $background4;
+  width: auto;
+}
 
 nav {
-  width: 90%;
-  padding-top: 2em;
-  // background-image: url(grey-gradient-nav.png);
+  font-family: $playfair;
+  font-size: 1.4em;
+  position: absolute;
+  right: 0px;
+  display: inline;
+  width: auto;
+  padding-top: 1em;
+  padding-right: 30px;
+  text-align: right;
 
   li {
     list-style:none;
-    text-align: right;
-    font-family: $font-family;
-    font-size: 1.4em;
+    color: black;
+    a:link {
+      color: white;
+      text-decoration-style: dashed;;
+    }
+    a:visited {
+      color: black;
+    }
+    a:hover {
+      color: red;
+    }
   }
 }
 
-body {
-  background-image: image-url('dark-geometric-1920x1080.png');
-  width: 90%;
-}
-
-a:visited {
-  color: green;
-  text-decoration: none;
-}
-
-#page-title {
-  font-family: $font-family;
-  color: #A2C88A;
-  font-size: 50px;
-  font-weight: bold;
+#title {
+  width: 100%;
+  color: #F6B68A;
+  text-align: center;
   text-decoration: underline;
   text-shadow: 2px 2px #30594D;
-  text-align: center;
+  font-family: $playfair;
+  font-size: 50px;
+  font-weight: bold;
+  padding-bottom: 75px;
   h1 i:first-child {
-    color: #50A192;
+    color: #83B644;
   }
-}
-
-#page-subtitle {
-  font-family: $font-family;
-  font-size: 25px;
-  padding-left: 50px;
-  padding-bottom: 50px;
-  text-align: left;
-  color: white;
-
-}
-#rest-name {
-  font-size: 30px;
-  color: #F9FCD3;
-  text-align: left
 }
 
 .restaurant-list {
-
-  font-family: $font-family;
-
+  font-family: $playfair;
   p {
     font-size: 20px;
     color: #D4D6C2;
@@ -63,8 +63,8 @@ a:visited {
 
   table {
     table-layout: fixed;
-    // border: 2px dotted;
-    width: 95%
+    width: 100%;
+
   }
   th {
     text-align: left;
@@ -75,4 +75,10 @@ a:visited {
   p {
     font-size: 1.5em;
   }
+}
+
+#rest-name {
+  font-size: 30px;
+  color: #F9FCD3;
+  text-align: left
 }
