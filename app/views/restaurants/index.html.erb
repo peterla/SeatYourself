@@ -2,21 +2,20 @@
   <h1>Seat<i>Yourself</i></h1>
 </div>
 
-  <div class="restaurant-list">
-    <table id="rest-table">
-    <colgroup>
-      <col width="30%">
-      <col width="40%">
-      <col width="30%">
-    </colgroup>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/300/350"></a></td>
-        <td><a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
-        <td><p><%= "#{restaurant.address}" %> </p><p> <%= "#{restaurant.phone_number}" %></p></td>
-     </tr>
-     <% end %>
-     </br>
+<div class="restaurants-list">
+  <table>
+  <colgroup>
+    <col width="500px">
+    <col width="500px">
+    <col width="600px">
+  </colgroup>
+  <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td> <a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/300/350" style="padding-bottom: 10px"></a> </td>
+      <td> <a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
+      <td><p><%= "#{restaurant.address}" %> </p><p> <%= "#{restaurant.phone_number}" %></p></td>
+   </tr></br>
+   <% end %>
   </table>
   </div>
 </div>
