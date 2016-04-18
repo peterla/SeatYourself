@@ -1,5 +1,10 @@
-<h1>New Users </h1>
+<p id="back"><%= link_to "Back", restaurants_url %></p>
 
+<div class="container" id="title">
+<h1>Sign up!</h1>
+</div >
+
+<div class="container" id="form">
 <%= form_for @user do |f| %>
 <%if @user.errors.any? %>
     <div class= "error_messages">
@@ -16,35 +21,36 @@
 <%= form_for @user do |f| %>
     <div class="field">
       <%= f.label :email %><br/>
-      <%= f.text_field :email %>
+      <%= f.text_field :email %></br>
     </div>
 
     <div class= "field">
-      <%= f.label :first_name %><br/>
-      <%= f.text_field :first_name %>
+      </br><%= f.label :first_name %><br/>
+      <%= f.text_field :first_name %></br>
     </div>
 
     <div class = "field">
-      <%= f.label :last_name %><br/>
+      </br><%= f.label :last_name %><br/>
       <%= f.text_field :last_name %>
     </div>
 
     <div class ="field">
-      <%= f.label :phone_number %><br/>
+      </br><%= f.label :phone_number %><br/>
       <%= f.text_field :phone_number %>
     </div>
 
     <div class="field">
-     <%= f.label :password %><br/>
+     </br><%= f.label :password %><br/>
      <%= f.password_field :password %>
    </div>
 
    <div class="field">
-     <%= f.label :password_confirmation %><br/>
+     </br><%= f.label :password_confirmation %><br/>
      <%= f.password_field :password_confirmation %>
    </div>
 
    <div class="actions">
-     <%= f.submit %>
+     </br><%= f.submit %>
   </div>
 <% end %>
+</div>

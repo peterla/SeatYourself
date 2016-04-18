@@ -2,14 +2,14 @@ $playfair: 'Playfair Display', serif;
 
 #back {
   font-family: $playfair;
-  font-size: 1.4em;
+  font-size: 1.5em;
   padding-left: 30px;
   position: absolute;
   top: 5%;
   left: 3%;
     a:link {
       color: white;
-      text-decoration-style: dashed;;
+      text-decoration-style: dashed;
     }
     a:visited {
       color: black;
@@ -53,4 +53,9 @@ p {
 #rest-pic {
   padding-top: 70px;
   padding-bottom: 70px;
+}
+
+#contact-info {
+  font-weight: bold;
+  text-decoration: underline;
 }

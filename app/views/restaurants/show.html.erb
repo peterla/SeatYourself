@@ -6,7 +6,7 @@
   <h1><%= "#{@restaurant.name}" %></h1>
   <h2><%= link_to "Make a Reservation", new_restaurant_reservation_url( @restaurant.id )%></h2>
   <img id="rest-pic" src="http://elrestaurante.com/downloads/756/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/LambCampechenaTacos.png?cb=706fc1b8f60098200302bfff3101eef7">
-  <p><strong>Contact Information:</strong></p>
+  <p id="contact-info">Contact Information:</p>
   <p><%= "#{@restaurant.address}" %></p>
   <p><%= "#{@restaurant.phone_number}" %></p>
 </div>
