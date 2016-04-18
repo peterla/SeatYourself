@@ -1,3 +1,15 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$playfair: 'Playfair Display', serif;
+
+#title {
+  box-sizing: border-box;
+}
+
+#form {
+  box-sizing: border-box;
+  padding-left: 10%;
+}
+
+.field {
+  font-family: $playfair;
+  font-size: 1.3em;
+}
