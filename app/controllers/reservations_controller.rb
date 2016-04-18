@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to restaurants_url, notice: "reservation created successfully"
     else
-      render "restaurants/show"
+      render "reservations/new"
     end
   end
 
