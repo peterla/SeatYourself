@@ -21,11 +21,14 @@
         <li id="my-profile">
           <% if current_user %>
             <%= link_to "My Profile", user_path(:id) %>
-            <% end %>
+          <% end %>
         </li>
-        <li><a href="users/index">My Reservations</a></li>
       </ul>
     </nav>
+  </div>
+  
+  <div class="container" id="title">
+    <h1>Seat<i>Yourself</i></h1>
   </div>
 
   <% if flash[:notice] %>
