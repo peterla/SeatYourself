@@ -18,22 +18,12 @@
   <p>
     <%= review.comment %>, Rating: <%= review.rating %>
 
-<<<<<<< HEAD
     <% if review.user != nil %>
     <em> by <%= review.user.first_name %> </em>
     Added on: <%= review.created_at %>
     <% end %>
     </p>
     <% end %>
-=======
-  <% if review.user != nil %>
-  <em>  by <%= review.user.first_name %>, </em>
-  Added on: <%= review.created_at %>
-  <% end %>
-
-  </p>
-<% end %>
->>>>>>> ed3deadc3ce47130bb3fc353fef25bc6bd592cd5
 
 <% if current_user %>
 
