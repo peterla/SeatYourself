@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-      redirect_to restaurants_url, notice: "Review created successfully"
+      redirect_to restaurant_path(params[:restaurant_id]), notice: "Review created successfully"
     else
       render "restaurants/show"
     end
