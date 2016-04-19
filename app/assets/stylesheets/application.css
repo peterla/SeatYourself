@@ -13,5 +13,9 @@
  *= require_tree .
  *= require_self
  */
- @import url(https://fonts.googleapis.com/css?family=Playfair+Display)
-@import restaurants.scss
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display)
+$playfair: 'Playfair Display', serif;
+
+ /*.title h1 {
+   margin: 0;
+ }*/
