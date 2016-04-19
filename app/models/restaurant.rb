@@ -5,6 +5,7 @@ class Restaurant < ActiveRecord::Base
   belongs_to :cuisine
   has_many :reviews
   has_many :users, through: :reviews
+  belongs_to :user
 
   def available?(date, time, party_size)
     party_size <= available_capacity(date, time)

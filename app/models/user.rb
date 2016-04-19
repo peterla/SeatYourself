@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :reservations
   has_many :restaurants, through: :reservations
   has_many :reviews, through: :restaurants
-
+  has_many :owned_restaurants, class_name: "Restaurant"
 
   validates :first_name,:last_name,:email,:phone_number, presence: true
 
