@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :load_restaurant
+  before_action :load_restaurant, except: [:destroy]
   before_action :ensure_logged_in, only: [:create, :destroy]
 
   def new
@@ -15,6 +15,12 @@ class ReservationsController < ApplicationController
     else
       render "reservations/new"
     end
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to user_path(:id), notice: "Reservation deleted successfully"
   end
 
   private

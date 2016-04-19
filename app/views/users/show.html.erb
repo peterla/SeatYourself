@@ -34,6 +34,9 @@
           <li><%= reservation.date %> - <%= reservation.time %></li>
           <li>Party of <%=reservation.party_size %></li>
         </ul>
+        <% if current_user %>
+          <%= link_to "Delete", reservation_path(reservation.id), method: :delete, data: {confirm:  "Are you sure you want to delete this reservation?"} %>
+        <% end %>
       <% end %>
   </div>
 </div>
