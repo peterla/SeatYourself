@@ -1,8 +1,29 @@
-<!-- <div class="container" id="title">
-  <h1>Seat<i>Yourself</i></h1>
-</div> -->
+<!-- Navigation Bar: -->
 
-<div class="container" id="content">
+<nav>
+  <div class="container" id="title"><h1>Seat<i>Yourself</i></h1></div>
+  <div class="container" id="nav-links">
+    <ul>
+      <li><a href="/restaurants">Home</a></li>
+      <li class="userinfo">
+        <% if current_user %>
+          Signed in as <%= current_user.email %> |  <%= link_to "Log out", session_path("current"), :method => :delete %>
+        <% else %>
+          <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+        <% end %></li>
+
+      <li id="my-profile">
+        <% if current_user %>
+          <%= link_to "My Profile", user_path(:id) %>
+        <% end %>
+      </li>
+    </ul>
+</nav>
+
+<!-- Main Body Content: -->
+
+<div class="container">
+  <div class="content">
   <table>
   <colgroup>
     <col width="30%">
