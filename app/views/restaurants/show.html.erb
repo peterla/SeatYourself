@@ -25,47 +25,47 @@
     </p>
     <% end %>
 
-<% if current_user %>
+    <% if current_user %>
 
-  <%= form_for([@restaurant, @review]) do | f | %>
-    <% if @review.errors.any? %>
-      <h2><%= pluralize( @review.errors.count, "error" ) %>
-          prohibited this review from being saved:</h2>
-      <ul>
-          <% @review.errors.full_messages.each do | msg | %>
-          <li>
-              <% msg %>
-          </li>
-          <% end %>
-      </ul>
+    <%= form_for([@restaurant, @new_review]) do | f | %>
+      <% if @new_review.errors.any? %>
+        <h2><%= pluralize( @new_review.errors.count, "error" ) %>
+            prohibited this review from being saved:</h2>
+        <ul>
+            <% @new_review.errors.full_messages.each do | msg | %>
+            <li>
+                <% msg %>
+            </li>
+            <% end %>
+        </ul>
+      <% end %>
+      <p>
+          <%= f.label :comment %>
+          <%= f.text_area :comment %>
+
+      </p>
+
+      <p>
+        <%= f.radio_button(:rating , 1) %>
+        <%= f.label(:rating , "1") %>
+        <%= f.radio_button(:rating , 2) %>
+        <%= f.label(:rating , "2") %>
+        <%= f.radio_button(:rating , 3) %>
+        <%= f.label(:rating ,"3") %>
+        <%= f.radio_button(:rating , 4) %>
+        <%= f.label(:rating, "4") %>
+        <%= f.radio_button(:rating, 5) %>
+        <%= f.label(:rating, "5" ) %>
+      </p>
+
+      <p>
+          <%= f.submit %>
+      </p>
     <% end %>
+    <% else %>
     <p>
-        <%= f.label :comment %>
-        <%= f.text_area :comment %>
-
+        Please
+        <%= link_to "log in", new_session_path %>
+        to add a review.
     </p>
-
-    <p>
-      <%= f.radio_button(:rating , 1) %>
-      <%= f.label(:rating , "1") %>
-      <%= f.radio_button(:rating , 2) %>
-      <%= f.label(:rating , "2") %>
-      <%= f.radio_button(:rating , 3) %>
-      <%= f.label(:rating ,"3") %>
-      <%= f.radio_button(:rating , 4) %>
-      <%= f.label(:rating, "4") %>
-      <%= f.radio_button(:rating, 5) %>
-      <%= f.label(:rating, "5" ) %>
-    </p>
-
-    <p>
-        <%= f.submit %>
-    </p>
-  <% end %>
-  <% else %>
-  <p>
-      Please
-      <%= link_to "log in", new_session_path %>
-      to add a review.
-  </p>
-<% end %>
+    <% end %>

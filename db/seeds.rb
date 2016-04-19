@@ -70,43 +70,43 @@ User.create!(
   :password => "1234",
   :phone_number => "9053769372"
 )
-
-Reservation.create!(
-  :user_id => 1,
-  :restaurant_id => 1,
-  :date => "2016-01-01",
-  :time => "08:00",
-  :party_size => 6
-)
-
-Reservation.create!(
-  :user_id => 1,
-  :restaurant_id => 3,
-  :date => "2016-01-02",
-  :time => "08:00",
-  :party_size => 8
-)
-
-Reservation.create!(
-  :user_id => 2,
-  :restaurant_id => 1,
-  :date => "2016-04-16",
-  :time => "12:00",
-  :party_size => 2
-)
-
-Reservation.create!(
-  :user_id => 2,
-  :restaurant_id => 2,
-  :date => "2016-04-15",
-  :time => "16:00",
-  :party_size => 4
-)
-
-Reservation.create!(
-  :user_id => 3,
-  :restaurant_id => 3,
-  :date => "2016-04-12",
-  :time => "18:00",
-  :party_size => 8
-)
+#
+# Reservation.create!(
+#   :user_id => 1,
+#   :restaurant_id => 1,
+#   :date => "2016-01-01",
+#   :time => "08:00",
+#   :party_size => 6
+# )
+#
+# Reservation.create!(
+#   :user_id => 1,
+#   :restaurant_id => 3,
+#   :date => "2016-01-02",
+#   :time => "08:00",
+#   :party_size => 8
+# )
+#
+# Reservation.create!(
+#   :user_id => 2,
+#   :restaurant_id => 1,
+#   :date => "2016-04-16",
+#   :time => "12:00",
+#   :party_size => 2
+# )
+#
+# Reservation.create!(
+#   :user_id => 2,
+#   :restaurant_id => 2,
+#   :date => "2016-04-15",
+#   :time => "16:00",
+#   :party_size => 4
+# )
+#
+# Reservation.create!(
+#   :user_id => 3,
+#   :restaurant_id => 3,
+#   :date => "2016-04-12",
+#   :time => "18:00",
+#   :party_size => 8
+# )
