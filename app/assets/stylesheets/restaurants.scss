@@ -1,6 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(https://fonts.googleapis.com/css?family=Lustria);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+// Font choices:
 
 $playfair: 'Playfair Display', serif;
+$lustria: 'Lustria', serif;
+$noto-sans: 'Noto Sans', sans-serif;
 
 // Here's a few wallpaper options:
 
@@ -9,116 +14,192 @@ $background2: image-url('black-thread-1920x1080.png');
 $background3: image-url('norwegian-rose-blue.png');
 $background4: image-url('norwegian-rose-bluegreen.png');
 
+
+
 body {
-  background-image: $background4;
+  height: auto;
   width: auto;
+  margin: 0;
+  background-image: $background4;
 }
 
-// #nav-bar {
-//   width: 100%;
-//   height: 20%;
-
-//   margin: auto;
-//   background-color: tomato;
-//   margin-bottom: 10px;
-//   }
-
-  nav {
-    background-color: grey;
-    position: absolute;
+nav {
+    background-image: url(navbar-trans-blue.png);
     right: 5px;
-    top: 20px;
     width: 100%;
-    height: 20%;
+    height: 200px;
     margin: auto;
-    font-family: $playfair;
+    font-family: $noto-sans;
     font-size: 1.3em;
     text-align: right;
-    border-radius: 5px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
 
+
+    #title {
+      display: inline;
+      float: left;
+      width: 60%;
+      margin: auto;
+      color: #F6B68A;
+      text-align: center;
+      text-decoration: underline;
+      text-shadow: 2px 2px #30594D;
+      font-family: $noto-sans;
+      font-size: 50px;
+      font-weight: bold;
+      padding-bottom: 50px;
+      // margin-left: 1%;
+      h1 i:first-child { color: #83B644 }
+    }
+
+    #nav-links {
+      padding-top: 1.7%;
+      box-sizing: border-box;
+      display: inline;
+      float: right;
+      width: 40%;
 
       ul {
-        position: absolute;
-        top: 10px;
-        right: 5px;
+        float: right;
+        right: 1%;
         line-height: 1.5em;
       }
       li {
         list-style:none;
         padding-right: 50px;
         color: black;
-        a:link {
-          color: white;
-          text-decoration-style: dashed;;
-        }
-        a:visited {
-          color: black;
-        }
-        a:hover {
-          color: red;
-        }
+        a:link { color: white; text-decoration-style: dashed }
+        a:visited { color: black }
+        a:hover { color: red }
       }
-  }
-
-
-#title {
-  width: 50%;
-  margin: auto;
-  margin-top: 10px;
-  display: fixed;
-  color: #F6B68A;
-  text-align: center;
-  text-decoration: underline;
-  text-shadow: 2px 2px #30594D;
-  font-family: $playfair;
-  font-size: 50px;
-  font-weight: bold;
-  padding-bottom: 75px;
-  h1 i:first-child {
-    color: #83B644;
-  }
+    }
 }
 
-#content {
+
+.content {
   box-sizing: border-box;
   width: 90%;
   height: 80%;
-  margin-top: 275px;
+  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-family: $playfair;
   border: 1px dotted;
 
-  #rest-name {
-    font-size: 30px;
-    color: #F9FCD3;
-    text-align: center;
-    text-decoration: none;
-    a:hover {
-      color: yellow;
-    }
-  }
-
-  #rest-contact {
-    font-size: 30px;
-    color: #E8BD67;
-    text-align: center;
-  }
   table {
     table-layout: fixed;
     width: 100%;
+
+    td {
+      text-align: left;
+      font-family: $noto-sans;
+      font-size: 30px;
+      padding-bottom: 40px;
+      padding-top: 40px;
+      padding-left: 40px;
+      border-bottom: 1px dotted;
+      a:link { color: white; text-decoration-style: dashed }
+      a:visited { color: black }
+      a:hover { color: red }
+      // a:hover {
+      //   color: yellow;
+      // }
+    }
   }
-  td {
-    text-align: left;
-    // text-decoration: underline;
-    font-size: 30px;
-    padding-bottom: 40px;
-    padding-top: 40px;
-    padding-left: 40px;
-    border-bottom: 1px dotted;
+}
+#rest-name {
+  font-size: 30px;
+  padding-left: 5%;
+  // font-family: $noto-sans;
+  // color: #F9FCD3;
+  // text-align: center;
+  // a:link { color: white; text-decoration-style: dashed }
+  // a:visited { color: black }
+  // a:hover { color: red }
+}
+
+#rest-contact {
+  font-size: 25px;
+  font-family: $noto-sans;
+  color: #E8BD67;
+  text-align: center;
+}
+
+// Everything below here is for the individual restaurants pages
+
+.restaurant-show {
+
+  .back-link {
+    font-family: $noto-sans;
+    font-size: 1.5em;
+    position: absolute;
+    top: .2%;
+    left: 5%;
+    a:link {
+      color: white;
+      text-decoration-style: dashed;
+    }
+    a:visited {
+      color: black;
+    }
     a:hover {
-      color: yellow;
+      color: red;
+    }
+  }
+  #body {
+    box-sizing: border-box;
+    margin-left: 30px;
+    text-align: center;
+
+    h1 {
+      font-family: $noto-sans;
+      font-size: 65px;
+      text-decoration: underline;
+      color: #D4D6C2;
+      margin-top: 5%;
+    }
+
+    h2 {
+      font-family: $noto-sans;
+      font-size: 2.5em;
+      padding-top: 25px;
+      padding-left: 30px;
+      font-style: italic;
+
+      a:link {
+        color: tomato;
+        text-decoration-style: dashed;
+      }
+      a:visited {
+        color: black;
+      }
+      a:hover {
+        color: red;
+    }
+  }
+  }
+
+  #rest-pic {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  #contact-info {
+    font-family: $noto-sans;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #reviews {
+    width: 46%;
+    margin: auto;
+    h2 {
+      font-family: $noto-sans;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    p {
+        font-family: $noto-sans;
     }
   }
 }
