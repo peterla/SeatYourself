@@ -158,12 +158,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  mail
   pry-rails
   rails (= 4.2.6)
   sass-rails (~> 5.0)
