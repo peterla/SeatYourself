@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Cuisine.destroy_all
+Restaurant.destroy_all
+User.destroy_all
+Reservation.destroy_all
+Review.destroy_all
+
 Cuisine.create!(
   :cuisine_type => "mexican"
 )
