@@ -1,21 +1,39 @@
-<H1> Customer's Page <h1>
+<p id="back"><%= link_to "Back", restaurants_url %></p>
 
-<%= link_to 'back to main page', restaurants_path %>
-
-<div>
-  Customer Profile
+<div class="my-profile-title">
+  <h1>My Profile</h1>
 </div>
 
-<div>
-    <%= current_user.first_name %>, <%= current_user.last_name %>, <%= current_user.phone_number %>
-    <%= current_user.email %>
-</div>
+<div class="container" id="user-content">
+  <div class="container" id="user-info">
+    <table>
+      <colgroup>
+        <col width="10%">
+        <col width="15%">
+      </colgroup>
+      <tr>
+        <td>Name:</td>
+        <td><%= current_user.first_name %> <%= current_user.last_name %></td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td><%= current_user.phone_number %></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><%= current_user.email %></td>
+      </tr>
+  </table>
+  </div>
 
-<div>
-  Reservations:
-    <% current_user.reservations.each do |reservation| %>
-      <ul>
-        <li> <%= reservation.restaurant.name %> <%= reservation.date %> <%= reservation.time %>, <%=reservation.party_size %>
-        </li>
-      </ul>
-    <%end %>
+  <div class="container" id="user-reservations">
+      <h2>My Reservations:</h2>
+      <% current_user.reservations.each do |reservation| %>
+        <ul>
+          <li><%= reservation.restaurant.name %></li>
+          <li><%= reservation.date %> - <%= reservation.time %></li>
+          <li>Party of <%=reservation.party_size %></li>
+        </ul>
+      <% end %>
+  </div>
+</div>

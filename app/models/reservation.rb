@@ -8,9 +8,7 @@ class Reservation < ActiveRecord::Base
   protected
 
   def less_than_max_capacity
-    other_people = Reservation.where(date: self.date, time: self.time).sum(:party_size)
-
-    if other_people + self.party_size > self.restaurant.capacity
+    if !self.restaurant.available?(self.date, self.time, self.party_size)
       errors.add(:base, "Sorry, too many people!")
     end
   end
