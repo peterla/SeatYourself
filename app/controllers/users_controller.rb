@@ -8,21 +8,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
       if @user.save
-        UserMailer.welcome_email(@user).deliver_now 
+        UserMailer.welcome_email(@user).deliver_now
         redirect_to restaurants_url, notice: "Thank you for Signing up"
       else
         render "new"
       end
     end
 
-  #  def show
-  #    if current_user
-  #      @reservations= @restaurant.reservations.build((reservation_params))
-  #    end
-  #  end
 
 private
   def user_params
-    params.require(:user).permit(:email, :first_name , :last_name , :phone_number , :password, :password_confirmation)
+    params.require(:user).permit(:email, :first_name , :last_name , :phone_number, :is_owner  , :password, :password_confirmation)
   end
 end

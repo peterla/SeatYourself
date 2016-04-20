@@ -23,6 +23,17 @@
         <td>Email:</td>
         <td><%= current_user.email %></td>
       </tr>
+
+      <tr>
+        <td> is owner:</td>
+        <td><%= current_user.is_owner %></td>
+      </tr>
+
+          <li> My restaurants </li>
+        <% current_user.owned_restaurants.each do |restaurant| %>
+        <li><%= restaurant.name %></li>
+        <% end %>
+
   </table>
   </div>
 

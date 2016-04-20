@@ -1,0 +1,50 @@
+<div class="container" id="title">
+<h1>Creating a Restaurant!</h1>
+</div >
+
+<div class="container" id="form">
+<%= form_for @restaurant do |f| %>
+<%if @restaurant.errors.any? %>
+    <div class= "error_messages">
+      <h2>  Missing infomation </h2>
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+  <% end %>
+
+
+
+<%= form_for @restaurant do |f| %>
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %></br>
+    </div>
+
+    <div class= "field">
+    </br><%= f.label :phone_number %><br/>
+      <%= f.text_field :phone_number %></br>
+    </div>
+
+    <div class = "field">
+      </br><%= f.label :address%><br/>
+      <%= f.text_field :address %>
+    </div>
+
+    <div class ="field">
+    </br><%= f.label :capacity %><br/>
+      <%= f.number_field :capacity , min:10, max:100 %>
+    </div>
+
+    <div class= "field">
+    </br><%= f.label :Cuisine_Type %><br/>
+    <%=f.select :cuisine_id, [['Mexican', 1], ['Chinese', 2], ['Japanese',3]] %>
+
+   <div class="actions">
+     </br><%= f.submit %>
+  </div>
+<% end %>
+</div>
