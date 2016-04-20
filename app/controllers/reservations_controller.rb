@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
 
     if @reservation.save
-       UserMailer.reservation_email(current_user, @reservation).deliver_now
+      UserMailer.reservation_email(current_user, @reservation).deliver_now
       redirect_to restaurants_url, notice: "reservation created successfully"
     else
       render "reservations/new"

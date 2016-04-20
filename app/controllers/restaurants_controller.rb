@@ -19,7 +19,7 @@ class RestaurantsController < ApplicationController
         render "new"
       end
     else
-      redirect_to  index_url, notice: "you have to be an owner to create a restaurant"
+      redirect_to  restaurants_url, notice: "you have to be an owner to create a restaurant"
     end
   end
 
