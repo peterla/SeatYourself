@@ -12,7 +12,7 @@
 
       <li id="my-profile">
         <% if current_user %>
-          <%= link_to "My Profile", user_path(:id) %>
+          <%= link_to "My Profile", user_path(:id) %> , <%= link_to "Create Restaurant", new_restaurant_path %>
         <% end %>
       </li>
     </ul>
