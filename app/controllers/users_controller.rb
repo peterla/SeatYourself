@@ -15,11 +15,6 @@ class UsersController < ApplicationController
       end
     end
 
-  #  def show
-  #    if current_user
-  #      @reservations= @restaurant.reservations.build((reservation_params))
-  #    end
-  #  end
 
 private
   def user_params

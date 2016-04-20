@@ -29,6 +29,7 @@
   <div class="container" id="body">
     <h1><%= "#{@restaurant.name}" %></h1>
 
+<<<<<<< HEAD
     <p id="contact-info">Contact Information:</p>
     <p id="contact-info"><%= "#{@restaurant.address}" %></p>
     <p id="contact-info"><%= "#{@restaurant.phone_number}" %></p>
@@ -50,14 +51,15 @@
       </p>
       <% end %>
 
-  <% if current_user %>
 
-    <%= form_for([@restaurant, @review]) do | f | %>
-      <% if @review.errors.any? %>
-        <h2><%= pluralize( @review.errors.count, "error" ) %>
+    <% if current_user %>
+
+    <%= form_for([@restaurant, @new_review]) do | f | %>
+      <% if @new_review.errors.any? %>
+        <h2><%= pluralize( @new_review.errors.count, "error" ) %>
             prohibited this review from being saved:</h2>
         <ul>
-            <% @review.errors.full_messages.each do | msg | %>
+            <% @new_review.errors.full_messages.each do | msg | %>
             <li>
                 <% msg %>
             </li>
@@ -93,5 +95,9 @@
         <%= link_to "log in", new_session_path %>
         to add a review.
     </p>
+<<<<<<< HEAD
   <% end %>
 </div>
+=======
+    <% end %>
+>>>>>>> create-resturants
