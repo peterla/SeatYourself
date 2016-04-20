@@ -24,28 +24,89 @@ Cuisine.create!(
   :cuisine_type => "japanese"
 )
 
+# Restaurants:
+
 Restaurant.create!(
-  :name => "Lone Star Tex Mex Restaurant",
-  :address => "123 Lone Star Blvd",
-  :phone_number=>  "4161234567",
-  :cuisine_id => 1,
-  :capacity=> 100
+  :name => "Grand Electric",
+  :address => "1330 Queen Street West",
+  :phone_number=>  "(416) 627-3459",
+  :cuisine_id => 5,
+  :capacity=> 100,
 )
 
 Restaurant.create!(
-  :name => "Congee Queen",
-  :address => "98 Beijing St",
-  :phone_number => "6471234791",
-  :capacity => 100
+  :name => "Ciccio's Pizza and Pasta",
+  :address => "796 Dundas Street West,",
+  :phone_number => "(416) 363-8686",
+  :cuisine_id => 4,
+  :capacity => 100,
 )
 
 Restaurant.create!(
-  :name => "Haruba Japanese Restaurant",
-  :address => "455 Tokyo St",
-  :phone_number =>  "9054326980",
+  :name => "Guu",
+  :address => "559 Bloor Street West",
+  :phone_number =>  "647-343-1101",
   :cuisine_id =>  3,
-  :capacity =>  100
+  :capacity =>  100,
 )
+
+Restaurant.create!(
+  :name => "Mean Bao",
+  :address => "167 Bathurst Street",
+  :phone_number =>  "(416) 862-7737",
+  :cuisine_id =>  1,
+  :capacity =>  100,
+)
+
+Restaurant.create!(
+  :name => "San Francesco Sandwiches",
+  :address => "609 Queen St. West",
+  :phone_number =>  "(647) 350-8325",
+  :cuisine_id =>  1,
+  :capacity =>  100,
+)
+
+Restaurant.create!(
+  :name => "Oyster Boy",
+  :address => "872 Queen Street West",
+  :phone_number =>  "(416) 534-3432",
+  :cuisine_id =>  2,
+  :capacity =>  100,
+)
+
+Restaurant.create!(
+  :name => "North of Brooklyn Pizzeria",
+  :address => "650 Queen Street West",
+  :phone_number =>  "(647) 352-5700",
+  :cuisine_id =>  4,
+  :capacity =>  100,
+)
+
+Restaurant.create!(
+  :name => "North of Brooklyn Pizzeria",
+  :address => "650 Queen Street West",
+  :phone_number =>  "(647) 352-5700",
+  :cuisine_id =>  4,
+  :capacity =>  100,
+)
+
+Restaurant.create!(
+  :name => "Fresh Off the Boat",
+  :address => "404 Queen Street West",
+  :phone_number =>  "(416) 603-3333",
+  :cuisine_id =>  2,
+  :capacity =>  100,
+)
+
+Restaurant.create!(
+  :name => "Kingyo Izakaya",
+  :address => "51B Winchester Street",
+  :phone_number =>  "(647) 748-2121",
+  :cuisine_id =>  3,
+  :capacity =>  100,
+)
+
+# Users:
 
 User.create!(
   :first_name => "Francis",

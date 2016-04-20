@@ -1,3 +1,43 @@
-// Place all the styles related to the reservations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$noto-sans: 'Noto Sans', sans-serif;
+
+.back-link {
+  font-family: $noto-sans;
+  font-size: 1.5em;
+  position: absolute;
+  top: .2%;
+  left: 5%;
+  a:link {
+    color: white;
+    text-decoration-style: dashed;
+  }
+  a:visited {
+    color: black;
+  }
+  a:hover {
+    color: red;
+  }
+}
+
+.reservations-page {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+
+    h1 {
+      font-family: $noto-sans;
+      text-align: center;
+    }
+    .field, .actions {
+      text-align: center;
+      padding-bottom: 25px;
+    }
+
+
+
+}
+
+#rest-name {
+  color: tomato;
+  text-decoration: underline;
+}

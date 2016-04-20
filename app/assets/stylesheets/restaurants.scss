@@ -14,6 +14,7 @@ $background2: image-url('black-thread-1920x1080.png');
 $background3: image-url('norwegian-rose-blue.png');
 $background4: image-url('norwegian-rose-bluegreen.png');
 
+//
 
 
 body {
@@ -172,7 +173,7 @@ nav {
         text-decoration-style: dashed;
       }
       a:visited {
-        color: black;
+        color: tomato;
       }
       a:hover {
         color: red;
@@ -182,16 +183,17 @@ nav {
 
   #rest-pic {
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 78px;
   }
 
   #contact-info {
+    font-size: 1.4em;
     font-family: $noto-sans;
     font-weight: bold;
     text-decoration: underline;
   }
   #reviews {
-    width: 46%;
+    width: 80%;
     margin: auto;
     h2 {
       font-family: $noto-sans;
