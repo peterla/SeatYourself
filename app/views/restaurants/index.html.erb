@@ -1,6 +1,6 @@
 <!-- Navigation Bar: -->
-
-<nav>
+<!--
+<nav class="navbar navbar-default">
   <div class="container" id="title"><h1>Seat<i>Yourself</i></h1></div>
   <div class="container" id="nav-links">
     <ul>
@@ -18,13 +18,39 @@
         <% end %>
       </li>
     </ul>
+</nav> -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Seat<i>Yourself</i></a>
+    </div>
+
+  <ul class="nav navbar-nav navbar-right">
+    <% if current_user %>
+      <%= link_to "Log out", session_path("current"), :method => :delete %>
+    <% else %>
+      <li><%= link_to "Log in", new_session_path %> </li>
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+      <li><%= link_to "Sign up", new_user_path %></li>
+    <% end %>
+  </ul>
+
+  </div>
 </nav>
 
 <!-- Main Body Content: -->
 
+<div class="jumbotron">
+  <h1>Welcome to SeatYourself!</h1>
+  <p>Reserv ur tabl w/out even picking up ur tele!</p>
+</br>
+  <p><a class="btn btn-primary btn-lg" href="/users/new" role="button">Sign Up Now</a></p>
+</div>
+
 <div class="container">
   <div class="content">
-  <table>
+  <table class="table-striped">
   <colgroup>
     <col width="30%">
     <col width="40%">
@@ -32,7 +58,7 @@
   </colgroup>
   <% @restaurants.each do |restaurant| %>
       <tr>
-      <td id="rest-image"> <a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/350/350" style="padding-bottom: 10px"></a> </td>
+      <td class="img-rounded"> <a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/350/350" style="padding-bottom: 10px"></a> </td>
       <td> <a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
       <td><h2 id="rest-contact"><%= "#{restaurant.address}" %></br></br><%= "#{restaurant.phone_number}" %></h2></td>
    </tr>
