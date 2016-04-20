@@ -25,17 +25,15 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Seat<i>Yourself</i></a>
     </div>
-
   <ul class="nav navbar-nav navbar-right">
     <% if current_user %>
-      <%= link_to "Log out", session_path("current"), :method => :delete %>
+      <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
     <% else %>
       <li><%= link_to "Log in", new_session_path %> </li>
       <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
       <li><%= link_to "Sign up", new_user_path %></li>
     <% end %>
   </ul>
-
   </div>
 </nav>
 
@@ -50,7 +48,7 @@
 
 <div class="container">
   <div class="content">
-  <table class="table-striped">
+  <table class="table-responsive">
   <colgroup>
     <col width="30%">
     <col width="40%">
