@@ -13,15 +13,23 @@ Reservation.destroy_all
 Review.destroy_all
 
 Cuisine.create!(
-  :cuisine_type => "mexican"
+  :cuisine_type => "Sandwiches"
 )
 
 Cuisine.create!(
-  :cuisine_type => "chinese"
+  :cuisine_type => "Seafood"
 )
 
 Cuisine.create!(
-  :cuisine_type => "japanese"
+  :cuisine_type => "Japanese"
+)
+
+Cuisine.create!(
+  :cuisine_type => "Italian"
+)
+
+Cuisine.create!(
+  :cuisine_type => "Mexican"
 )
 
 # Restaurants:
