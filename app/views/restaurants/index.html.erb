@@ -1,30 +1,38 @@
 <!-- Navigation Bar: -->
 
-<nav>
-  <div class="container" id="title"><h1>Seat<i>Yourself</i></h1></div>
-  <div class="container" id="nav-links">
-    <ul>
-      <li><a href="/restaurants">Home</a></li>
-      <li class="userinfo">
-        <% if current_user %>
-          Signed in as <%= current_user.email %> |  <%= link_to "Log out", session_path("current"), :method => :delete %>
-        <% else %>
-          <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-        <% end %></li>
+<nav class="navbar navbar-inverse" role="navigation">
 
-      <li id="my-profile">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SeatYourself</a>
+    </div>
+  <div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/restaurants">Home</a></li>
+        <% if current_user %>
+        <li><a href="">Signed in as <%= current_user.email %></a></li>
+        <li><a href="">|</a></li>
+        <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %></li>
+        <% end %>
+
+      <li>
         <% if current_user %>
           <%= link_to "My Profile", user_path(:id) %>
         <% end %>
       </li>
     </ul>
+</div>
 </nav>
 
 <!-- Main Body Content: -->
 
 <div class="container">
+  <div class="jumbotron">
+    </div>
   <div class="content">
-  <table>
+  <table class="table-hover">
   <colgroup>
     <col width="30%">
     <col width="40%">
@@ -39,4 +47,5 @@
    <% end %>
   </table>
   </div>
+
 </div>
