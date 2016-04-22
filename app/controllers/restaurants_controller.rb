@@ -28,6 +28,7 @@ class RestaurantsController < ApplicationController
     @new_review = @restaurant.reviews.build
   end
 
+  
 
   private
   def restaurant_params

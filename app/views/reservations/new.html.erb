@@ -1,11 +1,36 @@
-<p class="back-link"><%= link_to "Back", restaurants_url %></p>
+<nav class="navbar navbar-inverse" role="navigation">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Seat<i>Yourself</i></a>
+    </div>
+  <div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/restaurants">Home</a></li>
+        <% if current_user %>
+        <li><a href="">Signed in as <%= current_user.email %></a></li>
+        <li><a href="">|</a></li>
+        <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %></li>
+        <% end %>
+
+      <li>
+        <% if current_user %>
+          <%= link_to "My Profile", user_path(:id) %>
+        <% end %>
+      </li>
+    </ul>
+</div>
+</nav>
+
 
 <div class="reservations-page">
   <div class="container">
-  <h1><strong>Create a Reservation for <h1 id="rest-name"><%= "#{@restaurant.name}" %></h1></strong></h1>
+  <h1>Create a Reservation for: <h1><strong><%= "#{@restaurant.name}" %></strong></h1></h1>
 
 
-
+<div class="container" id="reservation-form">
   <%= form_for([@restaurant, @reservation]) do |f| %>
     <%if @reservation.errors.any? %>
       <div class= "error_messages">
@@ -19,6 +44,7 @@
     <% end %>
 
     <div class="field">
+    </br>
       <%= f.label :date %><br/>
       <%= f.date_field :date %>
     </div>
@@ -38,6 +64,6 @@
     </div>
 
   <% end %>
-
+</div>
   </div>
 </div>
