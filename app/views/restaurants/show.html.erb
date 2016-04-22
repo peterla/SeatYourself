@@ -1,33 +1,42 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Seat<i>Yourself</i></a>
+      <a class="navbar-brand" href="#">Seat<i>Yourself</i></a>
     </div>
-  <ul class="nav navbar-nav navbar-right">
-    <% if current_user %>
-      <%= link_to "Log out", session_path("current"), :method => :delete %>
-    <% else %>
-      <li><%= link_to "Log in", new_session_path %> </li>
-      <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-      <li><%= link_to "Sign up", new_user_path %></li>
-    <% end %>
-  </ul>
-  </div>
+  <div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/restaurants">Home</a></li>
+        <% if current_user %>
+        <li><a href="">Signed in as <%= current_user.email %></a></li>
+        <li><a href="">|</a></li>
+        <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %></li>
+        <% end %>
+
+      <li>
+        <% if current_user %>
+          <%= link_to "My Profile", user_path(:id) %>
+        <% end %>
+      </li>
+    </ul>
+</div>
 </nav>
 
+
 <div class="restaurant-show">
-<!-- 'Back' link -->
-  <h2 style="padding: 50px 50px"><%= link_to "Back", restaurants_url %></h2>
 
-  <div class="container" id="body">
+  <div class="container">
     <h1><%= "#{@restaurant.name}" %></h1>
-
-    <p id="contact-info">Contact Information:</p>
-    <p id="contact-info"><%= "#{@restaurant.address}" %></p>
-    <p id="contact-info"><%= "#{@restaurant.phone_number}" %></p>
-
     <h2><%= link_to "Make a Reservation!", new_restaurant_reservation_url( @restaurant.id )%></h2>
-    <img id="rest-pic" src="http://elrestaurante.com/downloads/756/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/LambCampechenaTacos.png?cb=706fc1b8f60098200302bfff3101eef7">
+    <table class="table">
+    <tr>
+        <td><img src="http://elrestaurante.com/downloads/756/download/bitblt-640xNone-62948b14a3b4192e529d5aa419e0002a1e776b5e/LambCampechenaTacos.png?cb=706fc1b8f60098200302bfff3101eef7"></td>
+        <td id="rest-contact-info">
+        <h3><%= "#{@restaurant.address}" %></h3>
+        <h3><%= "#{@restaurant.phone_number}" %></h3></td>
+    </tr>
+    </table></br></br>
   </div>
 
   <div class="container" id="reviews">
@@ -58,9 +67,9 @@
             <% end %>
         </ul>
       <% end %>
-      <p>
-          <%= f.label :comment %>
-          <%= f.text_area :comment %>
+      <p></br></br>
+          <%= f.label :comment %></p>
+          <p><%= f.text_area :comment %></br>
 
       </p>
 
@@ -75,7 +84,7 @@
         <%= f.label(:rating, "4") %>
         <%= f.radio_button(:rating, 5) %>
         <%= f.label(:rating, "5" ) %>
-      </p>
+      </p></br>
 
       <p>
           <%= f.submit %>

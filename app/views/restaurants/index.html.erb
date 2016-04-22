@@ -1,51 +1,63 @@
+
 <!-- Navigation Bar: -->
 
 <nav class="navbar navbar-inverse" role="navigation">
-
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SeatYourself</a>
-    </div>
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Seat<i>Yourself</i></a>
+  </div>
   <div>
-
     <ul class="nav navbar-nav navbar-right">
       <li><a href="/restaurants">Home</a></li>
-        <% if current_user %>
+      <% if current_user %>
         <li><a href="">Signed in as <%= current_user.email %></a></li>
         <li><a href="">|</a></li>
         <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
-        <% else %>
-          <li><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %></li>
-        <% end %>
-
-      <li>
-        <% if current_user %>
-          <%= link_to "My Profile", user_path(:id) %>
-        <% end %>
-      </li>
+      <% else %>
+        <li><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %></li>
+      <% end %>
+      <% if current_user %>
+        <li><%= link_to "My Profile", user_path(:id) %></li>
+      <% end %>
     </ul>
-</div>
+  </div>
 </nav>
 
 <!-- Main Body Content: -->
 
+<div class="jumbotron">
+  <img src="http://calvertjournal.com/images/uploads/articles/02-13/Oldich/_large_crop/pa_calvert_oldrich_17.jpg">
+  <h2>Join Billions on the Journey to Self-Seating</h2>
+</div>
 <div class="container">
-  <div class="jumbotron">
-    </div>
-  <div class="content">
-  <table class="table-hover">
-  <colgroup>
-    <col width="30%">
-    <col width="40%">
-    <col width="30%">
-  </colgroup>
-  <% @restaurants.each do |restaurant| %>
-      <tr>
-      <td id="rest-image"> <a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/350/350" style="padding-bottom: 10px"></a> </td>
-      <td> <a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
-      <td><h2 id="rest-contact"><%= "#{restaurant.address}" %></br></br><%= "#{restaurant.phone_number}" %></h2></td>
-   </tr>
-   <% end %>
-  </table>
-  </div>
+<h1>Choose which restaurant you'd like to reserve a seat at:</h1>
+</div>
 
+<div class="container">
+  <div class="content">
+    <table class="table-hover table-responsive">
+      <colgroup>
+        <col width="30%">
+        <col width="40%">
+        <col width="30%">
+      </colgroup>
+    <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td id="rest-image"> <a href="restaurants/<%=restaurant.id%>"><img src="http://placekitten.com/350/350" style="padding-bottom: 10px"></a> </td>
+          <td> <a href="restaurants/<%=restaurant.id%>"><h2 id="rest-name"><%= "#{restaurant.name}" %></h2></a></td>
+          <td><h2 id="rest-contact"><%= "#{restaurant.address}" %></br></br><%= "#{restaurant.phone_number}" %></h2></td>
+       </tr>
+     <% end %>
+    </table>
+  </div>
+</div>
+
+
+<div id="footer">
+  <div class="container">
+     <p class="text-muted credit" style="font-weight: bold; text-decoration: underline">SeatYourself 2016</p>
+     <p class="text-muted credit">Arnold Redoblado</p>
+     <p class="text-muted credit">Peter La</p>
+     <p class="text-muted credit">Francis Gallo</p>
+     <p class="text-muted credit">Mike Thai</p>
+  </div>
 </div>
